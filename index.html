@@ -1360,6 +1360,125 @@
         background-color: #f7f8fa;
       }
       /* #endregion */
+
+      .notebook {
+        border: thin solid black;
+        width: 100%;
+        min-height: 40em;
+        position: relative;
+        border-radius: 0 0 4px 4px;
+        padding-left: 50px;
+        background-color: #fffdf7;
+        /* prettier-ignore */
+        background-image: linear-gradient(to right,transparent 38px,#f0a8a8 38px,#f0a8a8 40px,transparent 40px),repeating-linear-gradient(to bottom,transparent 0,transparent 27px,#bcdcf4 27px,#bcdcf4 28px);
+      }
+
+      .notebook .page {
+        display: none;
+        left: 50px;
+        right: 0;
+        padding-top: 150px;
+        top: -150px;
+        position: absolute;
+      }
+
+      .notebook .page p {
+        margin: 0;
+        line-height: 28px;
+      }
+
+      .notebook .page p + p {
+        margin-top: 0;
+      }
+
+      .notebook .page .ryan {
+        margin-left: 20px;
+        line-height: 28px;
+        color: rgb(254, 23, 173);
+      }
+
+      .notebook .page:target {
+        display: inline;
+        text-decoration: none;
+        border: none;
+      }
+
+      .notebook:not(:has(.page:target)) .page:first-child {
+        display: inline;
+      }
+
+      .seca,
+      .secb,
+      .secc,
+      .secd {
+        display: inline-block;
+        width: 8ch;
+        text-align: center;
+        white-space: nowrap;
+        padding: 5px;
+        border: thin solid black;
+        position: relative;
+        z-index: 2;
+        border-radius: 4px 4px 0 0;
+        color: black;
+        text-decoration: none;
+      }
+
+      .seca {
+        background-color: lightcoral;
+      }
+      .secb {
+        background-color: lightsalmon;
+      }
+      .secc {
+        background-color: lightgoldenrodyellow;
+      }
+      .secd {
+        background-color: lightgreen;
+        color: rgb(254, 23, 173);
+      }
+      body:has(a[name="sec1"]:target) .seca,
+      body:has(a[name="sec2"]:target) .secb,
+      body:has(a[name="sec3"]:target) .secc,
+      body:has(a[name="sec4"]:target) .secd {
+        background-color: lightgrey;
+      }
+
+      .notebook .page .photo {
+        margin-top: 2em;
+        margin-left: auto;
+        margin-right: auto;
+        width: 23em;
+        max-width: 80%;
+        overflow: visible;
+        z-index: 9;
+        transform: rotate(5deg);
+      }
+      .page .photo .taped {
+        width: 100%;
+        padding-bottom: 115%;
+        background-color: white;
+        background-image: url("https://x02.me/i/ZNTG.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 5px;
+        box-shadow: 0 6px 15px #00000040;
+        transform: rotate(2deg);
+        border: 5px solid white;
+      }
+
+      .page .photo .taped::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 25%;
+        width: 50%;
+        height: 16px;
+        background: #ffffff80;
+        transform: rotate(0deg);
+        box-shadow: 0 1px 3px #00000030;
+      }
     </style>
   </head>
 
@@ -2658,8 +2777,6 @@
     </div>
     <!-- #endregion -->
 
-    <!-- #endregion -->
-
     <!-- hunter afterschool final  -->
     <dl class="message">
       <dl class="contact">
@@ -3036,6 +3153,262 @@
         contact the Australian Competition and Consumer Commission. <br />
         <br />Thank you for your feedback and understanding.
       </p>
+    </div>
+    <!-- #endregion -->
+
+    <!-- drunk debrief  -->
+    <dl class="message">
+      <dl class="contact">
+        <span class="avatar">
+          <img
+            src="https://i0.wp.com/matthewcassinelli.com/wp-content/uploads/shortcut-open-apple-id-preferences-icon.webp?fit=300%2C300&ssl=1"
+          />
+        </span>
+        <p>Ryan Whelan</p>
+      </dl>
+      <p class="time"><b>Today</b> 8:11AM</p>
+      <div class="out">
+        <dd>Sounds like you were having fun.</dd>
+      </div>
+      <p class="time"><b>Today</b> 1:31PM</p>
+      <div class="in">
+        <dd>mfy ffucking head hurts so vbad</dd>
+      </div>
+      <p class="time"><b>Today</b> 6:58PM</p>
+      <div class="out">
+        <dd>How’d you even get your hands on alcohol?</dd>
+        <dd>Do your parents drink?</dd>
+      </div>
+
+      <div class="in">
+        <dd>no absolutely not</dd>
+        <dd>only during communion lol</dd>
+        <dd>so hunter nicked some of his dads wine</dd>
+        <dd>surprisingly it was alcoholic</dd>
+      </div>
+
+      <div class="out">
+        <dd>Are you feeling better?</dd>
+      </div>
+      <div class="in">
+        <dd>yes</dd>
+        <dd>but maybe i won’t go all vampire mode on jesus next time</dd>
+        <dd>his blood seriously fucks me up</dd>
+      </div>
+      <div class="out">
+        <dd>I know you’re joking but</dd>
+        <dd>The wine doesn’t transubstantiate unless it’s with a priest</dd>
+        <dd>And only for catholics</dd>
+      </div>
+      <div class="in">
+        <dd>so you’re the person who pays attention in sunday school</dd>
+      </div>
+      <div class="out">
+        <dd>Nah I’ve never been</dd>
+        <dd>
+          But my mum had to tell someone about all the bullshit she was learning
+        </dd>
+        <dd>I guess some of it stuck</dd>
+      </div>
+
+      <div class="in">
+        <dd>you think it’s bullshit?</dd>
+      </div>
+
+      <div class="out">
+        <dd>yeah</dd>
+      </div>
+
+      <div class="out">
+        <dd>Don’t you?</dd>
+      </div>
+
+      <div class="in">
+        <dd>Yeah I do</dd>
+      </div>
+      <div class="footer">
+        <span class="typebar"></span>
+      </div>
+    </dl>
+
+    <!-- missing notebook -->
+    <dl class="message">
+      <dl class="contact">
+        <span class="avatar">
+          <img
+            src="https://i0.wp.com/matthewcassinelli.com/wp-content/uploads/shortcut-open-apple-id-preferences-icon.webp?fit=300%2C300&ssl=1"
+          />
+        </span>
+        <p>Ryan Whelan</p>
+      </dl>
+      <p class="time"><b>Today</b> 7:11PM</p>
+      <div class="out">
+        <dd>Ryan</dd>
+        <dd>My english notebook isn't in my backpack anymore</dd>
+        <dd>I can’t believe I’m saying this</dd>
+        <dd>But please tell me you took it</dd>
+        <dd>Instead of me losing it</dd>
+      </div>
+      <div class="in">
+        <dd>mmm sounds rough</dd>
+        <dd>check your locker tomorrow morning maybe?</dd>
+      </div>
+      <div class="out">
+        <dd>I’m 100% certain I put it in my bag</dd>
+      </div>
+
+      <div class="in">
+        <dd>that’s not what i said</dd>
+      </div>
+
+      <div class="out">
+        <dd>...</dd>
+        <dd>What could you possibly gain from reading my notes</dd>
+      </div>
+      <div class="in">
+        <dd class="emoji">😛</dd>
+      </div>
+
+      <div class="footer">
+        <span class="typebar"></span>
+      </div>
+    </dl>
+
+    <a href="#sec1" class="seca" rel="nofollow">Section A</a>
+    <a href="#sec2" class="secb" rel="nofollow">Section B</a>
+    <a href="#sec3" class="secc" rel="nofollow">Section C</a>
+    <a href="#sec4" class="secd" rel="nofollow"
+      ><b><u>RYAN</u></b></a
+    >
+
+    <div class="notebook">
+      <a class="page" rel="nofollow">
+        <p>&#8203;</p>
+        <p>
+          <u><b>VCE ENGLISH</b></u>
+          <span class="ryan"><b>feat Ryan!!!</b></span>
+        </p>
+        <p>Exam 28th Oct 9am!!!!</p>
+        <p>Section A, sunset boulevard</p>
+        <p>Section B, country</p>
+        <p>&#8203;</p>
+        <p>In exam, C, B, A? Or C, A, B - <i>TBD</i></p>
+      </a>
+      <a class="page" name="sec1" rel="nofollow">
+        <p>&#8203;</p>
+        <p><u>Text Response - Sunset Boulevard</u></p>
+        <p>
+          Write paragraphs thematically, or analyse chars | relationships |
+          Hollywood
+        </p>
+        <p>&#8203;</p>
+        <p>Relationships:</p>
+        <p><i>Joe and Betty - genuine love</i></p>
+
+        <p>
+          &#8226; “You’ll be waiting for me.” “With a wildly beating heart.”
+          “Life can be beautiful.”
+        </p>
+        <p>&#8203;</p>
+        <p>
+          &#8226; Flirtatious banter in the New Year Eve’s party = same
+          humour/interests
+          <span class="ryan">THAT'S your idea of flirting???</span>
+        </p>
+        <p>&#8203;</p>
+
+        <p>
+          &#8226; Camera techniques = equal proportions, medium shots - contrast
+          with Norma
+          <span class="ryan">Oh I'm sure they had equal proportions</span>
+        </p>
+        <p>&#8203;</p>
+        <p>
+          &#8226; Collaboration with Betty, actually productive writing
+          <span class="ryan">Super productive co-operation ;)</span>
+        </p>
+        <p>&#8203;</p>
+
+        <p><i>Joe and Norma</i>:</p>
+        <p>
+          &#8226; Emotional blackmail - threatens to commit suicide, appearing
+          vulnerable
+        </p>
+        <p>&#8203;</p>
+
+        <p>
+          &#8226; Symbol of animalism - clawed hands, leopard print, etc
+          <span class="ryan">Bet Joe's into it </span>
+        </p>
+        <p>&#8203;</p>
+        <p>
+          &#8226; Standing up, whilst Joe is sitting down - Norma is more
+          powerful - “I felt caught like that cigarette in the contraption on
+          her finger.”
+          <span class="ryan">Wtf when did he say this???</span>
+        </p>
+        <p>&#8203;</p>
+      </a>
+      <a class="page" name="sec2" rel="nofollow">
+        <p>&#8203;</p>
+
+        <p><b>TBD COME UP WITH IDEA</b> - <u>Writing about Country</u></p>
+
+        <p>&#8203;</p>
+
+        <p>Need flexible scaffold, able to be adapted for stimulus</p>
+        <p>&#8203;</p>
+
+        <p>&#8226; Colonialism speech, too boring?</p>
+        <p>&#8203;</p>
+        <p>
+          &#8226; Short story about rural Vic, moving towns? (Is Geelong rural
+          enough?) <span class="ryan">If it's not Melbourne then yes</span>
+        </p>
+        <p>&#8203;</p>
+        <p>
+          &#8226; Monologue + extended metaphor with Aus national symbol?
+          Experimental style with anthem?
+          <span class="ryan"
+            >I like this idea, make sure to mention our ocean sized girth</span
+          >
+        </p>
+      </a>
+      <a class="page" name="sec3" rel="nofollow">
+        <p>&#8203;</p>
+        <p><u>Argument Analysis</u></p>
+        <p>&#8203;</p>
+
+        <p>&#8226; Need to memorise intro structure</p>
+        <p>&#8226; Write more paragraphs</p>
+        <p>&#8226; DON'T FORGET TO ANALYSE THE VISUAL</p>
+
+        <p>&#8203;</p>
+        <p>&#8203;</p>
+        <p><u>2024 sample AA paragraph</u> <i>---- (finish later)</i></p>
+        <p>
+          After building her trustworthiness, Lower then addresses the dangerous
+          consequences of feeding birds, stating that bird feeding has adverse
+          health effects for birds. He remarks on the “unfortunate” fact that
+          birds do not benefit from being fed, “wish[ing] that more people
+          understood” the consequences. By framing bird feeding as simply
+          “unfortunate” - a product of misfortune - as well as using low impact
+          phrases like “wish” and “might” that seek to avoid aggression, Lower
+        </p>
+        <span class="ryan"
+          >people feed the birds because they look so pitiful and sad when they
+          don't get any attention :( not unlike someone I know</span
+        >
+      </a>
+      <a class="page" name="sec4" rel="nofollow"
+        ><p>&#8203;</p>
+        <p class="ryan">added some extra notes for you xoxo Ryan</p>
+        <p class="ryan">
+          claimed a tab for me :) though the pink on green is a bit...
+        </p>
+        <p class="ryan">anyways, guess who's got a picture</p>
+        <div class="photo"><div class="taped">&#8203;</div></div>
+      </a>
     </div>
   </body>
 </html>
