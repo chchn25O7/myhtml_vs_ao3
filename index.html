@@ -1361,16 +1361,26 @@
       }
       /* #endregion */
 
+      /* #region notebook */
+      .tabs {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
       .notebook {
-        border: thin solid black;
-        width: 100%;
+        box-sizing: border-box;
+        border: thin solid lightgrey;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
         min-height: 40em;
         position: relative;
-        border-radius: 0 0 4px 4px;
+        border-radius: 0 4px 4px 4px;
         padding-left: 50px;
         background-color: #fffdf7;
         /* prettier-ignore */
         background-image: linear-gradient(to right,transparent 38px,#f0a8a8 38px,#f0a8a8 40px,transparent 40px),repeating-linear-gradient(to bottom,transparent 0,transparent 27px,#bcdcf4 27px,#bcdcf4 28px);
+        color: black;
       }
 
       .notebook .page {
@@ -1385,15 +1395,26 @@
       .notebook .page p {
         margin: 0;
         line-height: 28px;
+        color: black;
       }
 
       .notebook .page p + p {
         margin-top: 0;
       }
-
+      .notebook .heading {
+        color: black;
+      }
+      .notebook .page p:has(.heading) {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        line-height: 56px;
+        font-size: 2em;
+      }
       .notebook .page .ryan {
         margin-left: 20px;
         line-height: 28px;
+        font-size: 1rem;
         color: rgb(254, 23, 173);
       }
 
@@ -1403,7 +1424,7 @@
         border: none;
       }
 
-      .notebook:not(:has(.page:target)) .page:first-child {
+      .notebook:not(:has(.page:target)) .default {
         display: inline;
       }
 
@@ -1416,10 +1437,11 @@
         text-align: center;
         white-space: nowrap;
         padding: 5px;
-        border: thin solid black;
+        border: thin solid lightgrey;
         position: relative;
         z-index: 2;
         border-radius: 4px 4px 0 0;
+        border-bottom: none;
         color: black;
         text-decoration: none;
       }
@@ -1441,15 +1463,16 @@
       body:has(a[name="sec2"]:target) .secb,
       body:has(a[name="sec3"]:target) .secc,
       body:has(a[name="sec4"]:target) .secd {
-        background-color: lightgrey;
+        background-color: rgb(209, 209, 209);
       }
 
       .notebook .page .photo {
         margin-top: 2em;
+        margin-bottom: 2em;
         margin-left: auto;
         margin-right: auto;
-        width: 23em;
-        max-width: 80%;
+        width: 22em;
+        max-width: 70%;
         overflow: visible;
         z-index: 9;
         transform: rotate(5deg);
@@ -1458,14 +1481,14 @@
         width: 100%;
         padding-bottom: 115%;
         background-color: white;
-        background-image: url("https://x02.me/i/ZNTG.webp");
+        background-image: url("https://x02.me/i/NG7H.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         padding-top: 5px;
         box-shadow: 0 6px 15px #00000040;
         transform: rotate(2deg);
-        border: 5px solid white;
+        border: 6px solid white;
       }
 
       .page .photo .taped::before {
@@ -1474,11 +1497,29 @@
         top: -10px;
         left: 25%;
         width: 50%;
-        height: 16px;
-        background: #ffffff80;
-        transform: rotate(0deg);
+        height: 20px;
+        background: #f78b3974;
+        transform: rotate(4deg);
         box-shadow: 0 1px 3px #00000030;
       }
+
+      .page .photo .taped::after {
+        content: "3/11/25";
+        padding-left: 20px;
+        color: rgb(254, 23, 173);
+        font-style: italic;
+        /* font-family: "Comic Sans MS", cursive, sans-serif; */
+        position: absolute;
+        bottom: -5px;
+        left: -5px;
+        right: -5px;
+        height: 2em;
+        background: #ffffff80;
+        border: 5px solid white;
+        background-color: white;
+      }
+
+      /* #endregion */
     </style>
   </head>
 
@@ -3274,25 +3315,37 @@
       </div>
     </dl>
 
-    <a href="#sec1" class="seca" rel="nofollow">Section A</a>
-    <a href="#sec2" class="secb" rel="nofollow">Section B</a>
-    <a href="#sec3" class="secc" rel="nofollow">Section C</a>
-    <a href="#sec4" class="secd" rel="nofollow"
-      ><b><u>RYAN</u></b></a
-    >
+    <!-- #region naims english notebook -->
+
+    <div class="tabs">
+      <a href="#sec1" class="seca" rel="nofollow">Section A</a>
+      <a href="#sec2" class="secb" rel="nofollow">Section B</a>
+      <a href="#sec3" class="secc" rel="nofollow">Section C</a>
+      <a href="#sec4" class="secd" rel="nofollow"
+        ><b><u>RYAN</u></b></a
+      >
+    </div>
 
     <div class="notebook">
-      <a class="page" rel="nofollow">
+      <a class="page default" rel="nofollow">
         <p>&#8203;</p>
         <p>
-          <u><b>VCE ENGLISH</b></u>
+          <u><b class="heading">English</b></u>
           <span class="ryan"><b>feat Ryan!!!</b></span>
         </p>
-        <p>Exam 28th Oct 9am!!!!</p>
+        <p>
+          Exam 28th Oct 9am <br />
+          Section A, sunset boulevard <br />
+          Section B, country <br />
+          <br />
+          Fix exam order, either C, B, A or C, A, B - <i>TBD</i>
+        </p>
+        <!-- 
+        <p>Exam 28th Oct 9am</p>
         <p>Section A, sunset boulevard</p>
         <p>Section B, country</p>
         <p>&#8203;</p>
-        <p>In exam, C, B, A? Or C, A, B - <i>TBD</i></p>
+        <p>Fix exam order, either C, B, A or C, A, B - <i>TBD</i></p> -->
       </a>
       <a class="page" name="sec1" rel="nofollow">
         <p>&#8203;</p>
@@ -3303,7 +3356,10 @@
         </p>
         <p>&#8203;</p>
         <p>Relationships:</p>
-        <p><i>Joe and Betty - genuine love</i></p>
+        <p>
+          <i>Joe and Betty - genuine love</i
+          ><span class="ryan">Cheating is genuine love -Naim Reid 2025</span>
+        </p>
 
         <p>
           &#8226; “You’ll be waiting for me.” “With a wildly beating heart.”
@@ -3315,30 +3371,18 @@
           humour/interests
           <span class="ryan">THAT'S your idea of flirting???</span>
         </p>
-        <p>&#8203;</p>
 
-        <p>
-          &#8226; Camera techniques = equal proportions, medium shots - contrast
-          with Norma
-          <span class="ryan">Oh I'm sure they had equal proportions</span>
-        </p>
         <p>&#8203;</p>
         <p>
           &#8226; Collaboration with Betty, actually productive writing
-          <span class="ryan">Super productive co-operation ;)</span>
+          <span class="ryan">Super productive co-operation for sure ;)</span>
         </p>
         <p>&#8203;</p>
 
         <p><i>Joe and Norma</i>:</p>
         <p>
-          &#8226; Emotional blackmail - threatens to commit suicide, appearing
-          vulnerable
-        </p>
-        <p>&#8203;</p>
-
-        <p>
-          &#8226; Symbol of animalism - clawed hands, leopard print, etc
-          <span class="ryan">Bet Joe's into it </span>
+          &#8226; Animalism - clawed hands, leopard print, etc
+          <span class="ryan">Joe's freaky I bet he's into it </span>
         </p>
         <p>&#8203;</p>
         <p>
@@ -3370,7 +3414,7 @@
           &#8226; Monologue + extended metaphor with Aus national symbol?
           Experimental style with anthem?
           <span class="ryan"
-            >I like this idea, make sure to mention our ocean sized girth</span
+            >I like this idea, make sure to mention our sea like girth</span
           >
         </p>
       </a>
@@ -3402,13 +3446,77 @@
       </a>
       <a class="page" name="sec4" rel="nofollow"
         ><p>&#8203;</p>
-        <p class="ryan">added some extra notes for you xoxo Ryan</p>
+        <p class="ryan">Added some extra notes for you, no need to thank me</p>
         <p class="ryan">
-          claimed a tab for me :) though the pink on green is a bit...
+          Claimed a tab for me :) Though the pink on green is a bit much, don't
+          you think? You guys learn about colour theory in Viscom right?
         </p>
-        <p class="ryan">anyways, guess who's got a picture</p>
+        <p class="ryan">Anyways, guess who finally got their picture printed</p>
         <div class="photo"><div class="taped">&#8203;</div></div>
       </a>
     </div>
+
+    <!-- #endregion -->
+
+    <!-- missing notebook -->
+    <dl class="message">
+      <dl class="contact">
+        <span class="avatar">
+          <img src="https://x02.me/i/NNVP5F.jpg" />
+        </span>
+        <p>Ryan Whelan</p>
+      </dl>
+      <p class="time"><b>Today</b> 10:14AM</p>
+      <div class="out">
+        <dd>???</dd>
+      </div>
+      <div class="in">
+        <dd>speechless?</dd>
+        <dd>not great, you gotta work on your crafting text speech</dd>
+      </div>
+      <div class="out">
+        <dd>Ok</dd>
+        <dd>WHY did you have to use pink pen</dd>
+      </div>
+
+      <div class="in">
+        <dd>it was the one closest to my hand</dd>
+      </div>
+
+      <div class="out">
+        <dd>Lazy fuck</dd>
+        <dd>I can't hand in my book to the teacher anymore</dd>
+      </div>
+
+      <div class="in">
+        <dd>lies and slander</dd>
+        <dd>i saw you smiling in english this morning</dd>
+        <dd>i know you use loose leaf</dd>
+      </div>
+
+      <div class="out">
+        <dd>Some of what you've written is just</dd>
+        <dd>You do know it's GIRT, right?</dd>
+      </div>
+
+      <div class="in">
+        <dd>applicable in both ways so tomato tomato</dd>
+      </div>
+
+      <div class="out">
+        <dd>This shit is so dumb 😭</dd>
+      </div>
+
+      <div class="in">
+        <dd>still made you laugh</dd>
+      </div>
+      <div class="in">
+        <dd class="emoji">🤷‍♂️</dd>
+      </div>
+
+      <div class="footer">
+        <span class="typebar"></span>
+      </div>
+    </dl>
   </body>
 </html>
