@@ -1615,7 +1615,7 @@ body:has(a[name="sec4"]:target) .secd {
   border-right: solid #383c4550 1px;
   transition: 2s;
   transition-delay: 1s;
-  z-index: 6;
+  z-index: 7;
 }
 
 .letter_mid_text {
@@ -1654,7 +1654,7 @@ body:has(a[name="sec4"]:target) .secd {
   box-shadow: -5px -3px 10px 1px #00000010;
   transition: 2s;
   transition-delay: 1s;
-  z-index: 5;
+  z-index: 7;
 }
 
 .letter_bot_text {
@@ -1685,6 +1685,8 @@ body:has(a[name="sec4"]:target) .secd {
   font-size: 100%;
   transition: 2s;
   transition-delay: 1s;
+  margin-left: 20%;
+  margin-top: 20px;
 }
 
 .trifold_letter2:hover .letter2_page {
@@ -1699,66 +1701,64 @@ body:has(a[name="sec4"]:target) .secd {
   left: 1px;
   top: 0px;
   color: black;
-  background: #f5f5f2;
-
+  /* background: #f5f5f2; */
   height: 200px;
   width: 100%;
-  border-left: solid #383c4550 1px;
-  border-right: solid #383c4550 1px;
-  border-top: solid #383c4550 1px;
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
-  box-shadow: -5px -3px 10px 1px #00000010;
   transition: 2s;
-  transition-delay: 1s;
+  transition-delay: 0s;
   z-index: 4;
 }
 
-.letter2_text {
-  position: relative;
-  margin: 0 auto;
-  top: 20px;
-  height: 170px;
-  width: 540px;
-  max-width: 90%;
-  min-width: 70%;
-  font-size: 0.8em;
+.letter2_page .sketch {
   overflow: auto;
+  display: block;
+  background-image: url("https://www.carmenhui.com/cdn/shop/files/Magpie-Pencil-Study.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 6px 15px #00000040;
+  z-index: 0;
+  opacity: 0;
+  transition: 1s;
+}
+
+.trifold_letter2:hover .sketch {
+  z-index: 13;
+}
+
+.trifold_letter:hover .sketch {
+  opacity: 1;
 }
 
 .trifold_letter:hover .letter2_page {
-  top: 50px;
-  left: 10px;
   height: 600px;
   transition: 2s;
 }
 
 .letter_top_text,
 .letter_mid_text,
-.letter_bot_text,
-.letter2_text {
+.letter_bot_text {
   scrollbar-width: thin;
   scrollbar-color: #b8b8b8 transparent;
 }
 
 .letter_top_text::-webkit-scrollbar,
 .letter_mid_text::-webkit-scrollbar,
-.letter_bot_text::-webkit-scrollbar,
-.letter2_text::-webkit-scrollbar {
+.letter_bot_text::-webkit-scrollbar {
   width: 4px;
 }
 
 .letter_top_text::-webkit-scrollbar-track,
 .letter_mid_text::-webkit-scrollbar-track,
-.letter_bot_text::-webkit-scrollbar-track,
-.letter2_text::-webkit-scrollbar-track {
+.letter_bot_text::-webkit-scrollbar-track {
   background: transparent;
 }
 
 .letter_top_text::-webkit-scrollbar-thumb,
 .letter_mid_text::-webkit-scrollbar-thumb,
-.letter_bot_text::-webkit-scrollbar-thumb,
-.letter2_text::-webkit-scrollbar-thumb {
+.letter_bot_text::-webkit-scrollbar-thumb {
   background-color: #b8b8b8;
   border-radius: 4px;
 }
